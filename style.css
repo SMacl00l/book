@@ -1,0 +1,130 @@
+
+.intro {
+  margin: 20px auto;
+  padding-top:10px;
+  text-align: left;
+  font-size: 20px;
+  color:#A09C9D;
+  display:block;
+  width: 50%;
+}
+  body {
+  background: radial-gradient(circle at 50% 70%, #b90b7e, #0a0a0a 60%, #000000 100%);
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw;
+  text-align: center;
+}
+
+    /* background-color: #231F20;
+    justify-content: center;
+    text-align: center; */
+  }
+  /* .parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .parallax__layer--base {
+    transform: translateZ(0);
+  }
+  .parallax__layer--back {
+    transform: translateZ(-1px);
+  } */
+
+
+@import "compass/css3";
+
+.smalldarkno{
+  display:block;
+  padding:0.8em;
+  font-size:2em;
+  font-family:arial, helvetica, san-serif;
+  text-decoration:none;
+  text-align:center;
+  width:200px;
+  margin-bottom:10px;
+  border:4px solid #363636;
+  font-weight:normal;
+transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+transition: padding .25s ease-in-out;
+   -moz-transition: padding .25s ease-in-out;
+   -webkit-transition: padding .25s ease-in-out;
+}
+
+.button:hover{
+ filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+ opacity: 0.8;
+ -moz-opacity: 0.8;
+  padding:2em;
+}
+
+#excuse {
+  padding-top: 20px;
+  display:block;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+  font-size: 18px;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
+.title {
+  text-align:left;
+  padding-left: 20px;
+  margin-left:auto;
+  font-family: 'Exo 2', sans-serif;
+  color: #A09C9D;
+  font-size: 44px;
+  font-weight: 400;
+  margin-top: 50px;
+  text-shadow: 0.8;
+}
+.object {
+  border: 1px solid white;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 0;
+}
+
+.object--circle {
+  border-radius: 50%;
+}
+
+.object--diamond {
+  transform: rotate(45deg);
+}
+
+@for $i from 1 through 30 {
+  .object--circle:nth-child(#{$i}),
+  .object--square:nth-child(#{$i}),
+  .object--diamond:nth-child(#{$i}) {
+    $temp: random(30);
+    height: $temp + px;
+    width: $temp + px;
+  }
+  .object:nth-child(#{$i}) {
+    top: 10% + random(80);
+    left: 5% + random(95);
+    animation-duration: 5000ms - ($i * random(300));
+    animation-fill-mode: backwards;
+    animation-delay: 10s;
+    animation-name: oFillUp--#{$i};
+  }
+}
